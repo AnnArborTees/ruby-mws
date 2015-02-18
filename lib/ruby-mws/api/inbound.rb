@@ -11,7 +11,7 @@ module MWS
         ]
 
       def_request [:list_inbound_shipment_items, :list_inbound_shipment_items_by_next_token],
-        verm: :get,
+        verb: :get,
         uri: '/FulfillmentInboundShipment/2010-10-01',
         version: '2010-10-01',
         mods: [
