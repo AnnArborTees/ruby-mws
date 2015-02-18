@@ -7,11 +7,15 @@ module MWS
         verb: :get,
         uri: '/FulfillmentInboundShipment/2010-10-01',
         version: '2010-10-01',
-        lists: {
-          seller_skus: 'SellerSkus.member'
-        },
         mods: [
-          -> (r) { r.shipment_status_list = [r.shipment_status_list.member].flatten }
+        ]
+
+      def_request [:list_inbound_shipment_items, :list_inbound_shipment_items_by_next_token],
+        verm: :get,
+        uri: '/FulfillmentInboundShipment/2010-10-01',
+        version: '2010-10-01',
+        mods: [
+          ->(r) { r.item_data = [r.item_data.member].flatten }
         ]
 
     end
