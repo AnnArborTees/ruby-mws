@@ -18,7 +18,8 @@ module MWS
               end
             end
           end
-        ]
+        ],
+        singular_marketplace_id: true
     end
 
   end
