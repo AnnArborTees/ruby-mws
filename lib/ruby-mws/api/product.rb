@@ -14,10 +14,7 @@ module MWS
             Array(result).each do |r|
               r.products = r.products ? [r.products.product].flatten : [] 
               r.products.each do |p|
-                p.identifiers    = [p.identifiers.identifier].flatten
-                p.attribute_sets = [p.attribute_sets.attribute_set].flatten
-                p.relationships  = [p.relationships.relationship].flatten
-                p.sales_rankings = [p.sales_rankings.sales_ranking].flatten
+                p.sales_rankings = [p.sales_rankings.sales_rank].flatten
               end
             end
           end
