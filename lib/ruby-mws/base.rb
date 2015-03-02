@@ -24,6 +24,10 @@ module MWS
       @inbound ||= MWS::API::Inbound.new(@connection)
     end
 
+    def products
+      @products ||= MWS::API::Product.new(@connection)
+    end
+
 
     # serves as a server ping
     def self.server_time
