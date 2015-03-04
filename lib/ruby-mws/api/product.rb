@@ -11,11 +11,8 @@ module MWS
         },
         mods: [
           lambda do |result|
-            Array(result).each do |r|
+            [result].flatten.each do |r|
               r.products = r.products ? [r.products.product].flatten : [] 
-              r.products.each do |p|
-                p.sales_rankings = [p.sales_rankings.sales_rank].flatten
-              end
             end
           end
         ],
