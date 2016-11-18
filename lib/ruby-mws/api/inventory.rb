@@ -12,7 +12,8 @@ module MWS
         },
         :mods => [
           lambda {|r| r.inventory_supply_list = [r.inventory_supply_list.member].flatten}
-        ]
+        ],
+        singular_marketplace_id: true
 
     end
 
