@@ -15,7 +15,7 @@ module MWS
         uri: '/FulfillmentInboundShipment/2010-10-01',
         version: '2010-10-01',
         mods: [
-          ->(r) { r.item_data = [r.item_data.member].flatten }
+          ->(r) { r.item_data = [r.item_data.member].flatten if r.item_data }
         ]
 
     end
