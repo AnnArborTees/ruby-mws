@@ -8,8 +8,9 @@ module MWS
 
         rash = self.new(body)
         handle_error_response(rash["error_response"]["error"]) unless rash["error_response"].nil?
-        raise BadResponseError, "received non-matching response type #{rash.keys}" if rash["#{name}_response"].nil?
-        rash = rash["#{name}_response"]
+        unless rash["#{name}_response"].nil?
+          rash = rash["#{name}_response"]
+        end
 
         if rash = rash["#{name}_result"]
           # only runs mods if correct result is present
