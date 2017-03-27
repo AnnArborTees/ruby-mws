@@ -15,8 +15,8 @@ module MWS
         if rash = rash["#{name}_result"]
           # only runs mods if correct result is present
           params[:mods].each {|mod| mod.call(rash) } if params[:mods]
-          rash
         end
+        rash
       end
 
       def self.handle_error_response(error)
