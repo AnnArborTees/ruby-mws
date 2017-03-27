@@ -12,7 +12,8 @@ module MWS
           rash = rash["#{name}_response"]
         end
 
-        if rash = rash["#{name}_result"]
+        if rash["#{name}_result"]
+          rash = rash["#{name}_result"]
           # only runs mods if correct result is present
           params[:mods].each {|mod| mod.call(rash) } if params[:mods]
         end
